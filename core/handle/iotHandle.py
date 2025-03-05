@@ -107,8 +107,8 @@ async def handleIotDescriptors(conn, descriptors):
     default_iot_volume = 100
     if "iot" in conn.config:
         default_iot_volume = conn.config["iot"]["Speaker"]["volume"]
-    logger.bind(tag=TAG).info(f"服务端设置音量为{default_iot_volume}")
-    await send_iot_conn(conn, "Speaker", "SetVolume", {"volume": default_iot_volume})
+    #logger.bind(tag=TAG).info(f"服务端设置音量为{default_iot_volume}")
+    #await send_iot_conn(conn, "Speaker", "SetVolume", {"volume": default_iot_volume})
 
 
 async def send_iot_conn(conn, name, method_name, parameters):

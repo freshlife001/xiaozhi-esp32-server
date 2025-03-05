@@ -413,6 +413,8 @@ class MusicHandler:
                 logger.bind(tag=TAG).debug(f"Starting playing... {selected_music}")
                 converter.play(url, conn, selected_music)
             else:
+                text = f"没找到 {potential_song}"
+                await send_stt_message(conn, text)
                 logger.bind(tag=TAG).debug("MP3 not found")
         except Exception as e:
             logger.bind(tag=TAG).error(f"播放音乐失败: {str(e)}")
